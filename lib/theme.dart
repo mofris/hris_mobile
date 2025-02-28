@@ -6,7 +6,7 @@ const double defaultMargin = 24.0;
 
 // Note: Colors
 
-Color primaryColor = const Color(0xff4141A4);
+Color primaryColor = const Color(0xFF00BF63);
 Color blackColor = const Color(0xff272C2F);
 Color whiteColor = const Color(0xffFFFFFF);
 Color redColor = const Color(0xffFD4F56);
