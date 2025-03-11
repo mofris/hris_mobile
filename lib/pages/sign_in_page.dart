@@ -3,6 +3,8 @@ import 'package:hris_mobile/theme.dart';
 import 'package:lottie/lottie.dart';
 
 class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
+
   @override
   _SignInPageState createState() => _SignInPageState();
 }
@@ -15,7 +17,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,7 +27,7 @@ class _SignInPageState extends State<SignInPage> {
                 fontSize: 16,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 2,
             ),
             Text(
@@ -42,7 +44,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget illustration() {
       return Container(
-        margin: EdgeInsets.only(top: 40),
+        margin: const EdgeInsets.only(top: 40),
         child: Center(
           child: Lottie.asset(
             'assets/animate-sign-in.json',
@@ -54,7 +56,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget inputEmail() {
       return Container(
-        margin: EdgeInsets.only(top: 40),
+        margin: const EdgeInsets.only(top: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -64,13 +66,13 @@ class _SignInPageState extends State<SignInPage> {
                 fontSize: 16,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Container(
               width: double.infinity,
               height: 45,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               decoration: BoxDecoration(
@@ -82,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
                   controller: emailController,
                   cursorColor: primaryColor,
                   style: purpleTextStyle.copyWith(),
-                  decoration: InputDecoration.collapsed(
+                  decoration: const InputDecoration.collapsed(
                     hintText: '',
                   ),
                 ),
@@ -95,7 +97,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget inputPassword() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 20,
         ),
         child: Column(
@@ -107,13 +109,13 @@ class _SignInPageState extends State<SignInPage> {
                 fontSize: 16,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Container(
               width: double.infinity,
               height: 45,
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               decoration: BoxDecoration(
@@ -126,7 +128,7 @@ class _SignInPageState extends State<SignInPage> {
                   cursorColor: primaryColor,
                   obscureText: true,
                   style: purpleTextStyle.copyWith(),
-                  decoration: InputDecoration.collapsed(
+                  decoration: const InputDecoration.collapsed(
                     hintText: '',
                   ),
                 ),
@@ -141,7 +143,7 @@ class _SignInPageState extends State<SignInPage> {
       return Container(
         height: 45,
         width: double.infinity,
-        margin: EdgeInsets.only(top: 40),
+        margin: const EdgeInsets.only(top: 40),
         child: TextButton(
           onPressed: () async {
             Navigator.pushNamedAndRemoveUntil(
@@ -168,7 +170,7 @@ class _SignInPageState extends State<SignInPage> {
 
     Widget signUpButton() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           top: 20,
           bottom: 20,
         ),
@@ -192,7 +194,7 @@ class _SignInPageState extends State<SignInPage> {
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: defaultMargin,
           ),
           child: ListView(

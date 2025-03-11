@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hris_mobile/theme.dart';
 
 class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     Widget backgroundImage() {
@@ -17,20 +19,20 @@ class OnboardingPage extends StatelessWidget {
       return SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 30,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Text(
                 'HR Made Simple,\nWork Made \nSmarter.',
                 style: whiteTextStyle.copyWith(fontSize: 32, fontWeight: bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
@@ -39,9 +41,9 @@ class OnboardingPage extends StatelessWidget {
                   fontWeight: light,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Center(
-                child: Container(
+                child: SizedBox(
                   width: 200,
                   height: 45,
                   child: TextButton(
@@ -63,11 +65,11 @@ class OnboardingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Center(
-                child: Container(
+                child: SizedBox(
                   width: 200,
                   height: 45,
                   child: TextButton(
@@ -92,7 +94,7 @@ class OnboardingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
             ],
