@@ -29,7 +29,7 @@ class OnboardingPage extends StatelessWidget {
                 height: 50,
               ),
               Text(
-                'HR Made Simple,\nWork Made \nSmarter.',
+                'CBI Mobile Apps,\nWork Made \nSmarter.',
                 style: whiteTextStyle.copyWith(fontSize: 32, fontWeight: bold),
               ),
               const SizedBox(

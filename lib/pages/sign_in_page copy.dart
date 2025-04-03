@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hris_mobile/theme.dart';
+import 'package:lottie/lottie.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -14,22 +15,9 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget backgroundImage() {
-      return Image.asset(
-        'assets/onboarding2.png',
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        fit: BoxFit.fill,
-      );
-    }
-
     Widget header() {
       return Container(
         margin: const EdgeInsets.only(top: 30),
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.symmetric(
-          horizontal: defaultMargin,
-        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
               height: 2,
             ),
             Text(
-              'CBI Mobile Apps\nSimplicity in a Single Touch.',
+              'Seamless HR Management, Limitless Growth.',
               style: blackTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,
@@ -54,89 +42,15 @@ class _SignInPageState extends State<SignInPage> {
       );
     }
 
-    Widget form() {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Opacity(
-            opacity: 0.8,
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 30, left: 20, right: 20),
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    'CBI Mobile Authorization',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  TextField(
-                    controller: emailController,
-                    cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                      labelText: 'Masukkan Email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey.shade200,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextField(
-                    controller: passwordController,
-                    cursorColor: primaryColor,
-                    decoration: InputDecoration(
-                      labelText: 'Masukkan Password',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey.shade200,
-                    ),
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () async {
-                      Navigator.pushNamedAndRemoveUntil(
-                        context,
-                        '/home',
-                        (route) => false,
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green.shade600,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      minimumSize: const Size(double.infinity, 50),
-                    ),
-                    child: const Text(
-                      'LOGIN',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+    Widget illustration() {
+      return Container(
+        margin: const EdgeInsets.only(top: 40),
+        child: Center(
+          child: Lottie.asset(
+            'assets/animate-sign-in.json',
+            width: 280,
           ),
-        ],
+        ),
       );
     }
 
@@ -277,18 +191,24 @@ class _SignInPageState extends State<SignInPage> {
     }
 
     return Scaffold(
-        body: SafeArea(
-      child: Stack(
-        children: [
-          backgroundImage(),
-          header(),
-          form()
-          // inputEmail(),
-          // inputPassword(),
-          // signInButton(),
-          // signUpButton(),
-        ],
+      body: SafeArea(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.symmetric(
+            horizontal: defaultMargin,
+          ),
+          child: ListView(
+            children: [
+              header(),
+              illustration(),
+              inputEmail(),
+              inputPassword(),
+              signInButton(),
+              signUpButton(),
+            ],
+          ),
+        ),
       ),
-    ));
+    );
   }
 }
